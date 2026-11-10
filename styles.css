@@ -328,3 +328,59 @@ footer {
         padding: 20px;
     }
 }
+
+
+/* Activity 3 - Booking Form */
+
+.radio-group {
+    margin: 12px 0 20px;
+}
+
+.radio-group label,
+.terms label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    margin: 12px 0;
+}
+
+.radio-group input,
+.terms input {
+    width: auto;
+    accent-color: #d4af37;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    flex: 1;
+}
+
+.reset-button {
+    background: transparent;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+}
+
+.reset-button:hover {
+    background: #d4af37;
+    color: #080d1b;
+}
+
+.form-note {
+    text-align: center;
+    font-size: 12px;
+    color: #f5c542;
+    margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+    .form-buttons {
+        flex-direction: column;
+    }
+}
