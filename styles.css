@@ -409,3 +409,46 @@ footer {
     visibility: visible;
     opacity: 1;
 }
+
+
+/* Activity 7 - Booking Summary Card */
+
+.booking-summary {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #101d35;
+    color: white;
+    border: 1px solid #d4af37;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.booking-summary h2 {
+    color: #e5bd55;
+    margin-bottom: 25px;
+}
+
+.booking-summary p {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.booking-summary span {
+    color: #f0c75e;
+    font-weight: bold;
+}
+
+.booking-summary h3 {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #d4af37;
+    color: #e5bd55;
+    font-size: 22px;
+}
+
+#summaryMessage {
+    color: #b9c7dc;
+    font-size: 14px;
+}
+

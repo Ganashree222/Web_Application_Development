@@ -164,6 +164,7 @@
     </section>
 
     <!-- BOOKING -->
+
     <section id="booking" class="booking-section">
       <div class="booking-heading">
         <p class="section-label">YOUR SEAT IS WAITING</p>
@@ -171,7 +172,7 @@
         <p>Make your match day unforgettable.</p>
       </div>
 
-      <form class="booking-form">
+      <form class="booking-form" id="bookingForm">
         <label for="name">Full Name</label>
         <input type="text" id="name" placeholder="Enter your name" required />
 
@@ -194,17 +195,23 @@
         <label for="match">Choose Your Match</label>
         <select id="match" required>
           <option value="">Select a match</option>
-          <option>CSK vs MI</option>
-          <option>RCB vs KKR</option>
-          <option>MI vs KKR</option>
+          <option value="CSK vs MI">CSK vs MI</option>
+          <option value="RCB vs KKR">RCB vs KKR</option>
+          <option value="MI vs KKR">MI vs KKR</option>
         </select>
 
         <label for="stand">Choose Your Stand</label>
         <select id="stand" required>
           <option value="">Select a category</option>
-          <option>General Stand</option>
-          <option>Premium Stand</option>
-          <option>VIP Stand</option>
+          <option value="General Stand" data-price="500">
+            General Stand - ₹500
+          </option>
+          <option value="Premium Stand" data-price="1200">
+            Premium Stand - ₹1,200
+          </option>
+          <option value="VIP Stand" data-price="2500">
+            VIP Stand - ₹2,500
+          </option>
         </select>
 
         <label for="tickets">Number of Tickets</label>
@@ -212,6 +219,24 @@
 
         <button type="submit">Continue Booking →</button>
       </form>
+
+      <!-- Booking Summary Card -->
+      <div class="booking-summary" id="bookingSummary">
+        <p class="section-label">YOUR BOOKING DETAILS</p>
+        <h2>Booking Summary</h2>
+
+        <p>Match: <span id="summaryMatch">Not selected</span></p>
+
+        <p>Stand: <span id="summaryStand">Not selected</span></p>
+
+        <p>Tickets: <span id="summaryTickets">1</span></p>
+
+        <h3>Total Price: <span id="summaryTotal">₹0</span></h3>
+
+        <p id="summaryMessage">
+          Select your match and stand to see your summary.
+        </p>
+      </div>
     </section>
 
     <!-- BOOKING SUMMARY -->
