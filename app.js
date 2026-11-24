@@ -121,3 +121,96 @@ document.getElementById("bookingForm").addEventListener("submit", function (even
 
     showToast("Booking summary confirmed!");
 });
+
+
+/* Responsive Hamburger Menu */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+
+            const isOpen = navLinks.classList.contains("active");
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation" : "Open navigation"
+            );
+
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+    }
+});
+
+
+/* ACTIVITY - TEAM FILTER AND GRID/LIST VIEW */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const teamFilter = document.getElementById("teamFilter");
+    const matchGrid = document.getElementById("matchGrid");
+    const gridButton = document.getElementById("gridView");
+    const listButton = document.getElementById("listView");
+
+    if (!teamFilter || !matchGrid || !gridButton || !listButton) {
+        return;
+    }
+
+    const matchCards = matchGrid.querySelectorAll(".match-card");
+
+    // 1. Filter matches by team
+    teamFilter.addEventListener("change", function () {
+
+        const selectedTeam = teamFilter.value;
+
+        matchCards.forEach(function (card) {
+
+            const teams = card.dataset.team.split(" ");
+
+            if (selectedTeam === "all" || teams.includes(selectedTeam)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+        if (typeof showToast === "function") {
+            showToast(
+                selectedTeam === "all"
+                    ? "Showing all matches!"
+                    : "Showing " + selectedTeam + " matches!"
+            );
+        }
+    });
+
+    // 2. Switch to Grid View
+    gridButton.addEventListener("click", function () {
+
+        matchGrid.classList.remove("list-view");
+
+        gridButton.classList.add("active");
+        listButton.classList.remove("active");
+
+        showToast("Grid view activated!");
+    });
+
+    // 3. Switch to List View
+    listButton.addEventListener("click", function () {
+
+        matchGrid.classList.add("list-view");
+
+        listButton.classList.add("active");
+        gridButton.classList.remove("active");
+
+        showToast("List view activated!");
+    });
+
+    // Default view
+    gridButton.classList.add("active");
+
+});

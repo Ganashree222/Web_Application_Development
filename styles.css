@@ -452,3 +452,403 @@ footer {
     font-size: 14px;
 }
 
+
+/* Responsive Navigation using Flexbox */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #d4af37;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* Mobile Navigation */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 18px;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+
+/* Match Schedule using CSS Grid */
+
+.matches-section {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.match-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.match-card {
+    background: #101b35;
+    color: white;
+    padding: 25px;
+    border: 1px solid #d4af37;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-8px);
+}
+
+.match-card h3 {
+    color: #d4af37;
+}
+
+.match-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .match-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .match-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Guidelines Section using CSS Grid */
+
+.guidelines-section {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.guideline-card {
+    background: #101b35;
+    color: white;
+    padding: 25px;
+    border: 1px solid #d4af37;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.guideline-card:hover {
+    transform: translateY(-8px);
+}
+
+.guideline-card h3 {
+    color: #d4af37;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .guidelines-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ACTIVITY - MATCH FILTER AND VIEW CONTROLS */
+
+.match-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.match-controls select,
+.match-controls button {
+    padding: 12px 22px;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    background: #101b35;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.match-controls select:focus {
+    outline: 2px solid #d4af37;
+}
+
+.match-controls button:hover,
+.match-controls button.active {
+    background: #d4af37;
+    color: #080d1b;
+}
+
+/* GRID VIEW */
+
+.match-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* LIST VIEW */
+
+.match-grid.list-view {
+    grid-template-columns: 1fr;
+}
+
+.match-grid.list-view .match-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    text-align: left;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .match-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .match-controls {
+        flex-direction: column;
+    }
+
+    .match-controls select,
+    .match-controls button {
+        width: 100%;
+    }
+
+    .match-grid,
+    .match-grid.list-view {
+        grid-template-columns: 1fr;
+    }
+
+    .match-grid.list-view .match-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* ACTIVITY - COMPLETE RESPONSIVE WEBSITE */
+
+/* TABLET RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .booking-section {
+        padding: 40px 5%;
+    }
+
+    .booking-form,
+    .booking-summary,
+    .summary-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
+
+/* MOBILE RESPONSIVE DESIGN */
+
+@media (max-width: 600px) {
+
+    /* Navigation */
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 500px;
+        padding: 40px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-content h2 {
+        font-size: 21px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Content Sections */
+    .content-section,
+    .matches-section,
+    .guidelines-section {
+        padding: 35px 5%;
+    }
+
+    .content-section h2,
+    .matches-section h2,
+    .guidelines-section h2 {
+        font-size: 25px;
+    }
+
+    /* Teams */
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Booking */
+    .booking-section {
+        padding: 35px 5%;
+    }
+
+    .booking-form {
+        padding: 20px;
+    }
+
+    .booking-summary {
+        padding: 20px;
+        margin-top: 25px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+}
+
+
+/* FIX BOOKING FORM ON MOBILE */
+
+@media (max-width: 600px) {
+    .booking-section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 25px 15px;
+        box-sizing: border-box;
+    }
+
+    .booking-form,
+    .booking-summary,
+    .summary-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form button {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .booking-form {
+        padding: 18px;
+    }
+
+    .booking-summary {
+        margin-top: 20px;
+        padding: 18px;
+    }
+}
